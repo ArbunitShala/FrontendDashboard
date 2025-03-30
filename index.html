@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<div class="datetime">
+    <span id="time">10:10</span>
+    <span id="date">1 april 2025</span>
+</div>
+<body>
+    <div class="dashboard">
+        <div class="header" id="header">John Doe Dashboard</div>
+        <div class="container">
+            <div class="card">
+                <h3>Snabblänkar</h3>
+                <ul class="links-list" id="links-list"></ul>
+                <button id="add-link-button" onclick="openModal()">Lägg till länk</button>
+
+                <!-- modal -->
+                <div id="link-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <h3>Lägg till en ny länk</h3>
+                        <input type="text" id="link-title" placeholder="Titel">
+                        <input type="text" id="link-url" placeholder="Länk">
+                        <button onclick="addLink()">Spara</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Dagens väder</h3>
+                <div class="day"></div>
+                <div class="day"></div>
+                <div class="day"></div>
+            </div>
+            <div class="card">
+                <h3>Senaste nyheterna</h3>
+                <div id="news-list"></div>
+            </div>
+            <div class="card">
+                <h3>Anteckningar</h3>
+                <textarea id="notes" oninput="saveNotes()"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="background-button">
+        <button id="random-background-button">Slumpa en ny bakgrund</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+

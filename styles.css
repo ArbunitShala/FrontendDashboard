@@ -1,0 +1,292 @@
+/* ====== Grundläggande stil ====== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ====== Dashboard ====== */
+.dashboard {
+    background: rgb(255, 255, 255, 0,9);
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 200px;
+}
+
+/* ====== Header ====== */
+.header {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* ====== Container med korten ====== */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolumner på stor skärm */
+    gap: 20px;
+}
+
+/* ====== Kortstil ====== */
+.card {
+    text-align: center;
+    background: rgb(206, 205, 205);
+    padding: 5px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+/* ====== Väderkort ====== */
+.day {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 320px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* ====== Länkar ====== */
+.card ul {
+    list-style: none;
+    align-items: center; 
+    padding: 0;
+}
+
+.card ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.links-list li {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+/* ====== Datum & Tid ====== */
+.datetime {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    background: rgb(206, 205, 205);
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: fit-content;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* ====== Bakgrundsknapp ====== */
+.background-button {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: white;
+    background: rgb(206, 205, 205);
+    border-radius: 10px;
+    padding: 2px;
+    max-height: 40px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== Modal (popup-fönster) ====== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#link-modal {
+    display: none;
+}
+
+/* ====== Lägg till länk-knapp ====== */
+#add-link-button {
+    color: white;
+    background: rgb(150, 149, 149);
+    border-radius: 10px;
+    padding: 6px 24px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#add-link-button:hover {
+    background: rgb(122, 122, 122);
+}
+
+/* ====== Ta bort ikon ====== */
+.remove-icon {
+    color: rgb(150, 149, 149);
+    cursor: pointer;
+    font-size: 5px;
+    vertical-align: middle;
+}
+
+/* ====== Länkstil ====== */
+.link {
+    background: white;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ====== Anteckningar ====== */
+#notes {
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* ====== RESPONSIV DESIGN ====== */
+
+/* Tablet (max 1024px) */
+@media (max-width: 1024px) {
+    .dashboard {
+        width: 90%;
+        margin-top: 100px;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Två kolumner */
+    }
+
+    .header {
+        font-size: 32px;
+    }
+
+    .day {
+        width: 100%;
+    }
+
+    .background-button {
+        font-size: 16px;
+    }
+}
+
+/* Mobil (max 768px) */
+@media (max-width: 768px) {
+    .dashboard {
+        width: 95%;
+        margin-top: 50px;
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* En kolumn */
+    }
+
+    .header {
+        font-size: 28px;
+    }
+
+    .datetime {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .background-button {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .day {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Små mobiler (max 480px) */
+@media (max-width: 480px) {
+    .dashboard {
+        width: 100%;
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* En kolumn */
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .day {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .datetime {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .background-button {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+
